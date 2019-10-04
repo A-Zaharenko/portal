@@ -17,10 +17,3 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
-
-- task: AzureRmWebAppDeployment@3
-  displayName: 'Azure App Service Deploy'
-  inputs:
-    azureSubscription: 'easylang-app-index - Azure'
-    WebAppName: 'easylang-app-index'
-    Package: '$(System.DefaultWorkingDirectory)/build'
