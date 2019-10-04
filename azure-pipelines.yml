@@ -12,6 +12,13 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
+steps:
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(build.sourcesDirectory)'
+    includeRootFolder: false
+- task: PublishBuildArtifacts@1
+
 - task: AzureRmWebAppDeployment@3
   displayName: 'Azure App Service Deploy'
   inputs:
